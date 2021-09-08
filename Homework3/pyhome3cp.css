@@ -138,14 +138,6 @@ a:hover {
 	border-radius: 0px;
 }
 
-#button1:hover {
-	filter: brightness(90%);
-}
-
-#button1:active {
-	filter: brightness(80%);
-}
-
 #font4 {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 80%;
@@ -409,14 +401,6 @@ a:hover {
 	margin-bottom: 65px;
 }
 
-#button2:hover {
-	filter: brightness(90%);
-}
-
-#button2:active {
-	filter: brightness(80%);
-}
-
 #font13 {
 	color: white;
 	font-family: 'Montserrat', sans-serif;
@@ -452,14 +436,6 @@ a:hover {
 	align-items: center;
 	border: none;
 	border-radius: 0px;
-}
-
-#button3:hover {
-	filter: brightness(90%);
-}
-
-#button3:active {
-	filter: brightness(80%);
 }
 
 #font16 {
