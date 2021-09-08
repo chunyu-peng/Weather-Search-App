@@ -50,13 +50,6 @@ a:hover {
 	color: black;
 }
 
-#page2 {
-	font-weight: bold;
-	font-size: 150%;
-	margin-top: 0px;
-	margin-bottom: 25px;
-}
-
 #lawyer {
 	display: flex;
 	width: 1191px;
@@ -67,7 +60,7 @@ a:hover {
 
 #lawyer:before {
 	content: "";
-	background-image: url("images/lawyer.jpg");
+	background-image: url("https://csci571.com/hw/hw3/images/lawyer.jpg");
 	background-size: contain;
 	background-repeat: no-repeat;
 	filter: brightness(80%);
@@ -254,7 +247,7 @@ a:hover {
 #glasses:before {
 	content: "";
 	position: absolute;
-	background-image: url("images/glasses.png");
+	background-image: url("https://csci571.com/hw/hw3/images/glasses.png");
 	background-position: top;
 	filter: grayscale(100%);
 	background-attachment: fixed;
@@ -305,7 +298,7 @@ a:hover {
 #grid:before {
 	content: "";
 	position: absolute;
-	background-image: url("images/grid.png");
+	background-image: url("https://csci571.com/hw/hw3/images/grid.png");
 	opacity: 8%;
 	background-size: cover;
 	background-position: 5px;
@@ -338,7 +331,7 @@ a:hover {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	background-image: url("images/notebook.jpg");
+	background-image: url("https://csci571.com/hw/hw3/images/notebook.jpg");
 	width: 1191px;
 	height: 450px;
 	background-size: cover;
@@ -498,7 +491,7 @@ a:hover {
 #facebook {
 	width: 10px;
 	height: 10px;
-	background-image: url("images/facebook.png");
+	background-image: url("https://csci571.com/hw/hw3/images/facebook.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 }
@@ -506,7 +499,7 @@ a:hover {
 #twitter {
 	width: 10px;
 	height: 10px;
-	background-image: url("images/twitter.png");
+	background-image: url("https://csci571.com/hw/hw3/images/twitter.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 }
@@ -514,7 +507,7 @@ a:hover {
 #ins {
 	width: 10px;
 	height: 10px;
-	background-image: url("images/instagram.png");
+	background-image: url("https://csci571.com/hw/hw3/images/instagram.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 }
@@ -522,7 +515,7 @@ a:hover {
 #u2b {
 	width: 10px;
 	height: 10px;
-	background-image: url("images/youtube.png");
+	background-image: url("https://csci571.com/hw/hw3/images/youtube.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 }
@@ -530,11 +523,32 @@ a:hover {
 #google {
 	width: 10px;
 	height: 10px;
-	background-image: url("images/googleplus.png");
+	background-image: url("https://csci571.com/hw/hw3/images/googleplus.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 }
 
 #space6 {
 	margin-right: 34px;
+}
+
+#page2container {
+	height: 2990px;
+	font-weight: bold;
+	font-size: 150%;
+}
+
+#about {
+	margin-top: 0px;
+	margin-bottom: 25px;
+}
+
+#projects {
+	margin-top: 0px;
+	margin-bottom: 25px;
+}
+
+#services {
+	margin-top: 0px;
+	margin-bottom: 25px;
 }
