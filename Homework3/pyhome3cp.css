@@ -439,6 +439,7 @@ a:hover {
 }
 
 #font16 {
+	font-family: 'Montserrat', sans-serif;
 	font-size: 93%;
 	letter-spacing: 0.6px;
 	text-shadow: 0.5px 0 #888888;
