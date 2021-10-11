@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather Search</title>
+    <link rel="stylesheet" type="text/css" href="weather.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <!-- This link is for highcharts -->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<body bgcolor="#e8e4e4">
+    <div id="contain">
+        <div id="search">
+            <span id="font1">Weather Search</span>
+            <span id="font2">Fill out the form to get weather info !</span>
+        </div>
+        <div id="in">
+            <form id="form" onsubmit="return false" method="GET">
+                <div id="streetbox">
+                    <span>
+                        <label for="street">Street</label>
+                        <label class="star">*</label>
+                    </span>
+                    <span>
+                        <input type="text" id="street" name="streetname" required>
+                    </span>
+                </div>
+                <div id="citystate">
+                    <div id="citybox">
+                        <span>
+                            <label for="city">City</label>
+                            <label class="star">&nbsp*</label>
+                        </span>
+                        <span>
+                            <input type="text" id="city" name="cityname" required>
+                        </span>
+                    </div>
+                    <div id="statebox">
+                        <span>
+                            <label for="state">State</label>
+                            <label class="star">&nbsp*</label>
+                        </span>
+                        <span>
+                            <select name="statename" id="state" required>
+                                <option value="" selected disabled>Select your state</option>
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="DE">Delaware</option>
+                                <option value="DC">District Of Columbia</option>
+                                <option value="FL">Florida</option>
+                                <option value="GA">Georgia</option>
+                                <option value="HI">Hawaii</option>
+                                <option value="ID">Idaho</option>
+                                <option value="IL">Illinois</option>
+                                <option value="IN">Indiana</option>
+                                <option value="IA">Iowa</option>
+                                <option value="KS">Kansas</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="LA">Louisiana</option>
+                                <option value="ME">Maine</option>
+                                <option value="MD">Maryland</option>
+                                <option value="MA">Massachusetts</option>
+                                <option value="MI">Michigan</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="MO">Missouri</option>
+                                <option value="MT">Montana</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NV">Nevada</option>
+                                <option value="NH">New Hampshire</option>
+                                <option value="NJ">New Jersey</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NY">New York</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="OH">Ohio</option>
+                                <option value="OK">Oklahoma</option>
+                                <option value="OR">Oregon</option>
+                                <option value="PA">Pennsylvania</option>
+                                <option value="RI">Rhode Island</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="SD">South Dakota</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="TX">Texas</option>
+                                <option value="UT">Utah</option>
+                                <option value="VT">Vermont</option>
+                                <option value="VA">Virginia</option>
+                                <option value="WA">Washington</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="WY">Wyoming</option>
+                            </select>
+                        </span>
+                    </div>
+                </div>
+                <hr />
+                <label id="boxlabel" for="checkbox">Want us to auto-detect your location? Check here</label>
+                <input type="checkbox" id="checkbox" name="checkbox" onclick="lockbox()">
+                <div id="butt">
+                    <button type="submit" id="submitform" name="submitform" onclick="showcard()">
+                        <span class="txt">SUBMIT</span>
+                    </button>
+                    <button type="button" id="clearform" name="clearform" onclick="cleanparam()">
+                        <span class="txt">CLEAR</span>
+                    </button>
+                </div>
+                <div id="fakein">
+                    <label for="autoloc"></label>
+                    <input type="text" name="autolocation" id="autoloc">
+                    <label for="autoct"></label>
+                    <input type="text" name="autocity" id="autoct">
+                    <label for="autorg"></label>
+                    <input type="text" name="autoregion" id="autorg">
+                    <label for="autoctry"></label>
+                    <input type="text" name="autocountry" id="autoctry">
+                </div>
+            </form>
+        </div>
+        <div id="card">
+            <div id="loc"></div>
+            <div id="pictemp">
+                <span id="pic"></span>
+                <span id="temp"></span>
+            </div>
+            <div id="des"></div>
+            <div id="attributes">
+                <div class="box">
+                    <span id="hum">Humidity</span>
+                    <span class="marginbox"></span>
+                    <span id="pichum"></span>
+                    <span class="marginbox"></span>
+                    <span id="valhum"></span>
+                </div>
+                <div class="box">
+                    <span id="press">Pressure</span>
+                    <span class="marginbox"></span>
+                    <span id="picpress"></span>
+                    <span class="marginbox"></span>
+                    <span id="valpress"></span>
+                </div>
+                <div class="box">
+                    <span id="wind">Wind Speed</span>
+                    <span class="marginbox"></span>
+                    <span id="picwind"></span>
+                    <span class="marginbox"></span>
+                    <span id="valwind"></span>
+                </div>
+                <div class="box">
+                    <span id="visi">Visibility</span>
+                    <span class="marginbox"></span>
+                    <span id="picvisi"></span>
+                    <span class="marginbox"></span>
+                    <span id="valvisi"></span>
+                </div>
+                <div class="box">
+                    <span id="cloud">Cloud Cover</span>
+                    <span class="marginbox"></span>
+                    <span id="piccloud"></span>
+                    <span class="marginbox"></span>
+                    <span id="valcloud"></span>
+                </div>
+                <div class="box">
+                    <span id="UV">UV Level</span>
+                    <span class="marginbox"></span>
+                    <span id="picUV"></span>
+                    <span class="marginbox"></span>
+                    <span id="valUV"></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <table id="table">
+                <tr id="header"><td class="longheadtd">Date</td><td class="longheadtd">Status</td><td class="shortheadtd">Temp High</td><td class="shortheadtd">Temp Low</td><td class="shortheadtd">Wind Speed</td></tr>
+            </table>
+        </div>
+        <div id="detail">
+            <div id="top">
+                Daily Weather Details
+            </div>
+            <div id="rest">
+                <span id="resttop">
+                    <span id="restdate">
+                        <span id="dt"></span>
+                        <span id="st"></span>
+                        <span id="tp"></span>
+                    </span>
+                    <span id="restpic"></span>
+                </span>
+                <span id="restbot">
+                    <span id="left">
+                        <span id="prec">Precipitation:&nbsp</span>
+                        <span class="marginboxtwo"></span>
+                        <span id="cor">Chance of Rain:&nbsp</span>
+                        <span class="marginboxtwo"></span>
+                        <span id="ws">Wind Speed:&nbsp</span>
+                        <span class="marginboxtwo"></span>
+                        <span id="humm">Humidity:&nbsp</span>
+                        <span class="marginboxtwo"></span>
+                        <span id="visibi">Visibility:&nbsp</span>
+                        <span class="marginboxtwo"></span>
+                        <span id="ss">Sunrise/Sunset:&nbsp</span>
+                    </span>
+                    <span id="right">
+                        <span id="valprec"></span>
+                        <span class="marginboxtwo"></span>
+                        <span id="valcor"></span>
+                        <span class="marginboxtwo"></span>
+                        <span id="valws"></span>
+                        <span class="marginboxtwo"></span>
+                        <span id="valhumm"></span>
+                        <span class="marginboxtwo"></span>
+                        <span id="valvisibi"></span>
+                        <span class="marginboxtwo"></span>
+                        <span id="valss"></span>
+                    </span>
+                </span>
+            </div>
+            <div id="bot">
+                Weather Charts
+            </div>
+            <a id="point" onclick="pointclick()"></a>
+        </div>
+        <figure class="highcharts-figure">
+            <div id="container1"></div>
+            <div id="container2"></div>
+        </figure>
+        <div id="noresult">No records have been found.</div>
+    </div>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/modules/windbarb.js"></script>
+    <script src="https://code.highcharts.com/modules/pattern-fill.js"></script>
+    <script type="text/javascript" src="weather.js"></script>
+</body>
+</html>
