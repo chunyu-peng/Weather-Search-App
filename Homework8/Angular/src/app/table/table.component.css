@@ -1,0 +1,12 @@
+.table {
+  margin-top: 5px;
+}
+
+.date {
+  text-decoration: underline;
+  color: blue;
+}
+
+.date:hover {
+  cursor: default;
+}

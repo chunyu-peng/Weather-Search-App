@@ -1,0 +1,33 @@
+.city {
+  text-decoration: underline;
+  color: blue;
+}
+
+.city:hover {
+  cursor: default;
+}
+
+.state {
+  text-decoration: underline;
+  color: blue;
+}
+
+.state:hover {
+  cursor: default;
+}
+
+.container {
+  display: flex;
+  width: auto;
+  background-color: orange;
+  height: 50px;
+  align-items: center;
+}
+
+b {
+  display: flex;
+}
+
+#warn {
+  display: flex;
+}

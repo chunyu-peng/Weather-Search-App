@@ -1,0 +1,19 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let el of elements">
+      <th scope="row">{{el.id}}</th>
+      <td class="date" (click)="clicktable(el.id, el.date)">{{el.date}}</td>
+      <td>
+        <img src="{{el.status[0]}}" alt="" width=25px height=25px>{{el.status[1]}}
+      </td>
+      <td>{{el.temphi}}</td>
+      <td>{{el.templo}}</td>
+      <td>{{el.wind}}</td>
+    </tr>
+  </tbody>
+</table>

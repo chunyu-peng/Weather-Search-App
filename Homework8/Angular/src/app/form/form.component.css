@@ -1,0 +1,57 @@
+.container {
+  background-color: #e8e4e4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.star {
+  color: red;
+}
+
+.form-horizontal {
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+}
+
+.checkbox {
+  display: flex;
+  width: auto;
+}
+
+.txt {
+  margin-left: 5px;
+}
+
+#formsearch {
+  margin-right: 15px;
+}
+
+h4 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#autocheck {
+  margin-right: 3px;
+}
+
+.warn {
+  color: red;
+}
+
+#flexrow {
+  display: flex;
+  flex-direction: row;
+}

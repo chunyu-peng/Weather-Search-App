@@ -1,0 +1,5 @@
+#charttab {
+  display: flex;
+  width: auto;
+  justify-content: flex-end;
+}

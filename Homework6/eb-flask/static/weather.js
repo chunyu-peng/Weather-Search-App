@@ -76,7 +76,7 @@ async function showcard() {
         wind.innerHTML = interv[i].values.windSpeed;
     }
     dailydata = interv;
-    hourlydata = jsondata.comb.result.data.timelines[2].intervals;4
+    hourlydata = jsondata.comb.result.data.timelines[2].intervals;
     document.getElementById("card").style.display = "flex";
     document.getElementById("table").style.display = "block";
 }

@@ -1,0 +1,7 @@
+#cardloc {
+  display: flex;
+  font-weight: bold;
+  width: auto;
+  justify-content: center;
+  margin-bottom: 50px;
+}

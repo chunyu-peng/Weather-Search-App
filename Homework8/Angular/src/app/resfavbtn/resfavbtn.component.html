@@ -1,0 +1,8 @@
+<div id="resfavbarcontainer">
+  <div id="row">
+    <span class="resfav"><button id="results" class="btn {{ results? 'btn-primary' : 'btn-default' }}" (click)="resultsclick()">Results</button></span>
+    <span id="space"></span>
+    <span class="resfav"><button id="favorites" class="btn {{ favorites? 'btn-primary' : 'btn-default' }}" (click)="favoritesclick()">Favorites</button></span>
+    </div>
+  <app-favorite *ngIf="favorite.showfavorite" (favclicked)="init()"></app-favorite>
+</div>

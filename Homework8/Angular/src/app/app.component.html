@@ -1,0 +1,17 @@
+<div class="container">
+  <app-form></app-form>
+  <app-resfavbtn></app-resfavbtn>
+  <app-progressbar *ngIf="progress.loading"></app-progressbar>
+  <div id="error" *ngIf="progress.loadingerror"><span id="txt">An error occured please try again later</span></div>
+  <div *ngIf="progress.finished && anim.control">
+    <div>
+      <app-cardloc *ngIf="loc.showcardloc"></app-cardloc>
+      <app-table *ngIf="table.showtable"  (tableclicked)="slidedetails()"></app-table>
+    </div>
+    <app-dailytemp *ngIf="chart.showchart"></app-dailytemp>
+    <app-meteogram *ngIf="meteo.showmeteo"></app-meteogram>
+  </div>
+  <div *ngIf="progress.finished && !anim.control">
+    <app-dailydetails *ngIf="dailydetails.showdetails" (detailsclicked)="slidetable()"></app-dailydetails>
+  </div>
+</div>

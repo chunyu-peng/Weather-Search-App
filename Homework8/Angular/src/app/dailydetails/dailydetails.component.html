@@ -1,0 +1,70 @@
+<div id="details">
+  <div class="row">
+    <div class="buttons">
+      <button type="button" class="btn btn-light btn-outline-dark" (click)="showtable()">
+        <img src="../../assets/images/chevron-left.svg">
+        <span class="txt">List</span>
+      </button>
+    </div>
+    <b id="date">
+      {{ date }}
+    </b>
+    <div class="buttons">
+      <a class="btn btn-primary btn-sm" href="https://twitter.com/intent/tweet?text={{ sweet }}&hashtags=CSCI571WeatherForecast" target="_blank">
+        <img src="../../assets/images/2021 Twitter logo - white.png" width=15px height=15px>
+      </a>
+    </div>
+  </div>
+  <table class="table table-striped mt-3" >
+  <tbody>
+  <tr>
+    <th scope="col" class="col-sm-3">Status</th>
+    <td class="col-sm-3">{{ status }}</td>
+  </tr>
+  <tr>
+    <th scope="col" class="col-sm-3">Max Temperature</th>
+    <td class="col-sm-3">{{ maxtemp }} °F</td>
+  </tr>
+  <tr>
+    <th scope="col" class="col-sm-3">Min Temperature</th>
+    <td class="col-sm-3">{{ mintemp }} °F</td>
+  </tr>
+  <tr>
+    <th scope="col" class="col-sm-3">Apparent Temperature</th>
+    <td class="col-sm-3">{{ apptemp }} °F</td>
+  </tr>
+  <tr>
+    <th scope="col" class="col-sm-3">Sun Rise Time</th>
+    <td class="col-sm-3">{{ sunrise }}</td>
+  </tr>
+  <tr>
+    <th scope="col" class="col-sm-3">Sun Set Time</th>
+    <td class="col-sm-3">{{ sunset }}</td>
+  </tr>
+  <tr>
+    <th scope="col" class="col-sm-3">Humidity</th>
+    <td class="col-sm-3">{{ humidity }} %</td>
+  </tr>
+  <tr>
+    <th scope="col" class="col-sm-3">Wind Speed</th>
+    <td class="col-sm-3">{{ windspd }} mph</td>
+  </tr>
+  <tr>
+    <th scope="col" class="col-sm-3">Visibility</th>
+    <td class="col-sm-3">{{ visibility }} mi</td>
+  </tr>
+  <tr>
+    <th scope="col" class="col-sm-3">Cloud Cover</th>
+    <td class="col-sm-3">{{ cloud }} %</td>
+  </tr>
+  </tbody>
+  </table>
+  <agm-map
+  [latitude]="lat"
+  [longitude]="long"
+  [zoom]="15" >
+  <agm-marker
+  [latitude]="lat"
+  [longitude]="long"></agm-marker>
+  </agm-map>
+</div>
