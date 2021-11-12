@@ -1,8 +1,12 @@
 <div id="resfavbarcontainer">
-  <div id="row">
-    <span class="resfav"><button id="results" class="btn {{ results? 'btn-primary' : 'btn-default' }}" (click)="resultsclick()">Results</button></span>
+  <ul class="nav nav-pills justify-content-center">
+    <li class="nav-item">
+      <a id="results" class="nav-link {{ results? 'active' : '' }}" (click)="resultsclick()" href="javascript:void(0);">Results</a>
+    </li>
     <span id="space"></span>
-    <span class="resfav"><button id="favorites" class="btn {{ favorites? 'btn-primary' : 'btn-default' }}" (click)="favoritesclick()">Favorites</button></span>
-    </div>
-  <app-favorite *ngIf="favorite.showfavorite" (favclicked)="init()"></app-favorite>
+    <li class="nav-item">
+      <a id="favorites" class="nav-link {{ favorites? 'active' : '' }}" (click)="favoritesclick()" href="javascript:void(0);">Favorites</a>
+    </li>
+  </ul>
 </div>
+<app-favorite *ngIf="favorite.showfavorite" (favclicked)="init()"></app-favorite>

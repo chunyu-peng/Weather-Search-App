@@ -162,6 +162,7 @@ export class FormComponent implements OnInit {
     this.resfav.results = true;
     this.resfav.ngOnInit();
     this.progress.loadingerror = false;
+    this.progress.searchclicked = false;
   }
 
   public showresult() {
@@ -169,6 +170,7 @@ export class FormComponent implements OnInit {
     this.loc.showcardloc = false;
     this.progress.loading = true;
     this.progress.finished = false;
+    this.progress.searchclicked = false;
     let streetcheck = (document.getElementById("street") as HTMLInputElement).value;
     let citycheck = (document.getElementById("city") as HTMLInputElement).value;
     let statecheck = (document.getElementById("state") as HTMLInputElement).value;
@@ -182,11 +184,13 @@ export class FormComponent implements OnInit {
     this.http.get<any>(url).subscribe(value => {
       if (value == "failed") {
         this.progress.loading = false;
+        this.progress.searchclicked = true;
         this.progress.loadingerror = true;
         return;
       }
       localStorage.setItem('result', JSON.stringify(value));
       this.progress.loading = false;
+      this.progress.loadingerror = false;
       this.progress.finished = true;
       GlobalConstants.favoritescheck = false;
       GlobalConstants.resultscheck = true;

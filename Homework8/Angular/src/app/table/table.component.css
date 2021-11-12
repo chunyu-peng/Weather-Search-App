@@ -2,11 +2,10 @@
   margin-top: 5px;
 }
 
-.date {
+a {
   text-decoration: underline;
-  color: blue;
 }
 
-.date:hover {
+a:hover {
   cursor: default;
 }

@@ -7,14 +7,12 @@
   <tbody>
     <tr *ngFor="let el of elements">
       <th scope="row">{{el.id}}</th>
-      <td class="city" (click)="showdayview(el.id)">{{el.city}}</td>
-      <td class="state">{{el.state}}</td>
-      <td (click)="toss(el.id)">
-        <img src="../../assets/images/trash-fill.svg" alt="" width=25px height=25px>
+      <td><a href="javascript:void(0);" (click)="showdayview(el.id)">{{el.city}}</a></td>
+      <td><a href="javascript:void(0);" (click)="showdayview(el.id)">{{el.state}}</a></td>
+      <td>
+        <img (click)="toss(el.id)" src="../../assets/images/trash-fill.svg" alt="" width=25px height=25px>
       </td>
     </tr>
   </tbody>
 </table>
-<div class="container" *ngIf="!hasfavorite">
-  <b>Sorry!&nbsp;</b><span id="warn">No records found.</span>
-</div>
+<div class="alert alert-warning" role="alert" *ngIf="!hasfavorite"><b>Sorry!&nbsp;</b>No records found.</div>

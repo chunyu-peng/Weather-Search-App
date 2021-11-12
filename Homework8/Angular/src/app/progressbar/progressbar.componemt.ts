@@ -10,4 +10,5 @@ export class ProgressBarComponent {
   loading: boolean = false;
   finished: boolean = false;
   loadingerror: boolean = false;
+  searchclicked: boolean = false;
 }

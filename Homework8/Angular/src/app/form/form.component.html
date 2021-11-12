@@ -4,8 +4,8 @@
     <div class="form-group row">
       <label class="col-sm-3" for="street">Street<span class="star"> *</span></label>
       <div class="col-sm-5">
-        <input type="text" class="form-control" id="street" name="street" [formControl]="streetcontrol" (focusout)="streettrimvalid()" required>
-        <div *ngIf="streetvalid" class="warn">
+        <input type="text" class="{{ streetvalid? 'form-control is-invalid' : 'form-control' }}" id="street" name="street" [formControl]="streetcontrol" (focusout)="streettrimvalid()" required>
+        <div class="invalid-feedback">
           Please enter a valid street.
         </div>
       </div>
@@ -13,8 +13,8 @@
     <div class="form-group row">
       <label class="col-sm-3" for="city">City<span class="star"> *</span></label>
       <div class="col-sm-5">
-        <input type="text" class="form-control" id="city" name="city" [formControl]="citycontrol" (focusout)="citytrimvalid()" [matAutocomplete]="auto" required>
-        <div *ngIf="cityvalid" class="warn">
+        <input type="text" class="{{ cityvalid? 'form-control is-invalid' : 'form-control' }}" id="city" name="city" [formControl]="citycontrol" (focusout)="citytrimvalid()" [matAutocomplete]="auto" required>
+        <div class="invalid-feedback">
           Please enter a valid city.
         </div>
         <mat-autocomplete #auto="matAutocomplete" (optionSelected)='getCity($event.option.value)'>
@@ -100,11 +100,11 @@
         <div id="flexrow">
           <button type="submit" class="btn btn-primary" id="formsearch" [disabled]="(!streetcontrol.value || !citycontrol.value) && !checkipinfo" (click)='showresult()'>
             <span class="material-icons">search</span>
-            <span class="txt">Search</span>
+            <span>Search</span>
           </button>
           <button type="button" class="btn btn-light btn-outline-dark" id="formclean" (click)='allclear()'>
             <span class="material-icons" style="transform: scaleX(-1)">clear_all</span>
-            <span class="txt">Clear</span>
+            <span>Clear</span>
           </button>
         </div>
       </div>

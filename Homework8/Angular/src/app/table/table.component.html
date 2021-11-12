@@ -1,19 +1,21 @@
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th *ngFor="let head of headElements" scope="col">{{head}} </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let el of elements">
-      <th scope="row">{{el.id}}</th>
-      <td class="date" (click)="clicktable(el.id, el.date)">{{el.date}}</td>
-      <td>
-        <img src="{{el.status[0]}}" alt="" width=25px height=25px>{{el.status[1]}}
-      </td>
-      <td>{{el.temphi}}</td>
-      <td>{{el.templo}}</td>
-      <td>{{el.wind}}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let el of elements">
+        <th scope="row" class="col-sm-1">{{el.id}}</th>
+        <td class="col-sm-3"><a href="javascript:void(0);" (click)="clicktable(el.id, el.date)">{{el.date}}</a></td>
+        <td class="col-sm-2">
+          <img src="{{el.status[0]}}" alt="" width=25px height=25px>{{el.status[1]}}
+        </td>
+        <td class="col-mt-2">{{el.temphi}}</td>
+        <td class="col-mt-2">{{el.templo}}</td>
+        <td class="col-mt-2">{{el.wind}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

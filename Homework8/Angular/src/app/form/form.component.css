@@ -24,10 +24,6 @@
   width: auto;
 }
 
-.txt {
-  margin-left: 5px;
-}
-
 #formsearch {
   margin-right: 15px;
 }
@@ -47,11 +43,11 @@ h4 {
   margin-right: 3px;
 }
 
-.warn {
-  color: red;
-}
-
 #flexrow {
   display: flex;
   flex-direction: row;
+}
+
+.form-control.is-invalid {
+  background-image: none;
 }

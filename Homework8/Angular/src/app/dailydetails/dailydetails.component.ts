@@ -23,7 +23,7 @@ export class DailyDetailsComponent implements OnInit{
   cloud: any;
   lat: any;
   long: any;
-  sweet: any;
+  tweet: any;
   constructor(
     private anim: AnimationsComponent
   ) { }
@@ -46,7 +46,7 @@ export class DailyDetailsComponent implements OnInit{
     let loc = weather.loc.split(",");
     this.lat = parseFloat(loc[0]);
     this.long = parseFloat(loc[1]);
-    this.sweet = `The temperature in ${weather.title} on ${this.date} is ${interv[row].values.temperature}°F. The weather conditions are ${this.status}`;
+    this.tweet = `The temperature in ${weather.title} on ${this.date} is ${interv[row].values.temperature}°F. The weather conditions are ${this.status}`;
   }
 
   private codemap(code: any) {

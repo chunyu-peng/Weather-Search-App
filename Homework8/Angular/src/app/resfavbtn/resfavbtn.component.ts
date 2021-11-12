@@ -9,6 +9,7 @@ import { DailyDetailsComponent } from '../dailydetails/dailydetails.component';
 import { FavoriteComponent } from '../favorite/favorite.component';
 import { GlobalConstants } from '../global/global.component';
 import { AnimationsComponent } from '../animations/animations.component';
+import { ProgressBarComponent } from '../progressbar/progressbar.componemt';
 
 @Component({
   selector: 'app-resfavbtn',
@@ -28,7 +29,8 @@ export class ResFavbtnComponent implements OnInit {
     public charttab: ChartTabComponent,
     public detailstab: DetailsTabComponent,
     public favorite: FavoriteComponent,
-    public anim: AnimationsComponent
+    public anim: AnimationsComponent,
+    public progress: ProgressBarComponent
   ) { }
 
   ngOnInit() {
@@ -40,7 +42,6 @@ export class ResFavbtnComponent implements OnInit {
     this.favorites = GlobalConstants.favoritescheck;
     if (this.favorites) {
       let element: HTMLElement = document.getElementById('favorites') as HTMLElement;
-      console.log("enter")
       element.click();
     }
   }
@@ -59,6 +60,7 @@ export class ResFavbtnComponent implements OnInit {
     this.charttab.showcharttab = true;
     this.detailstab.showdetailstab = true;
     this.favorite.showfavorite = false;
+    this.progress.loadingerror = true;
   }
 
   public favoritesclick() {
@@ -75,6 +77,7 @@ export class ResFavbtnComponent implements OnInit {
     this.charttab.showcharttab = false;
     this.detailstab.showdetailstab = false;
     this.favorite.showfavorite = true;
+    this.progress.loadingerror = false;
   }
 
   public init() {

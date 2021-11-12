@@ -1,11 +1,13 @@
-<ul class="nav nav-tabs" id="charttab">
-  <li class="nav-item">
-    <p class="nav-link {{ table? 'active' : '' }}" (click)="tableclick()">Day View</p>
-  </li>
-  <li class="nav-item">
-    <p class="nav-link {{ chart? 'active' : '' }}" (click)="chartclick()">Daily Temp. Chart</p>
-  </li>
-  <li class="nav-item">
-    <p class="nav-link {{ meteo? 'active' : '' }}" (click)="meteoclick()">Meteogram</p>
-  </li>
-</ul>
+<div class="tabbable">
+  <ul class="nav nav-tabs justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link {{ table? 'active' : '' }}" (click)="tableclick()" href="javascript:void(0);">Day View</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link {{ chart? 'active' : '' }}" (click)="chartclick()" href="javascript:void(0);">Daily Temp. Chart</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link {{ meteo? 'active' : '' }}" (click)="meteoclick()" href="javascript:void(0);">Meteogram</a>
+    </li>
+  </ul>
+</div>
