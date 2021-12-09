@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#302c2c"
+    tools:context=".Weekly">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txt"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:text="Temperature Range"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:gravity="center_horizontal|center_vertical" />
+
+        <com.highsoft.highcharts.core.HIChartView
+            android:id="@+id/hc"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent" />
+    </LinearLayout>
+</FrameLayout>

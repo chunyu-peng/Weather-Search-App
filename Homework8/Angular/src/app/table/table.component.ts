@@ -13,7 +13,6 @@ export class TableComponent implements OnInit {
   headElements: string[] = [];
   elements: any;
   weather: any;
-  @Output() tableclicked: EventEmitter<any> = new EventEmitter();
   constructor(
     private details: DailyDetailsComponent,
     private anim: AnimationsComponent
@@ -162,7 +161,6 @@ export class TableComponent implements OnInit {
   public clicktable(id: any, date: any) {
     localStorage.setItem('row', (id - 1) as unknown as string);
     localStorage.setItem('date', date);
-    this.tableclicked.emit();
     this.details.showdetails = true;
     this.anim.control = false;
   }

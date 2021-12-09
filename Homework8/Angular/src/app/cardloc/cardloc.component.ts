@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DetailsTabComponent } from '../detailstab/detailstab.component';
 import { ChartTabComponent } from '../charttab/charttab.component';
+import { TableComponent } from '../table/table.component';
 
 @Component({
   selector: 'app-cardloc',
@@ -13,6 +14,7 @@ export class CardLocComponent implements OnInit {
   constructor(
     public detailstab: DetailsTabComponent,
     public charttab: ChartTabComponent,
+    public table: TableComponent
   ) { }
 
   ngOnInit() {

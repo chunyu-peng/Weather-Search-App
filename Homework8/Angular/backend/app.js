@@ -22,7 +22,11 @@ app.get('/api/products/autocomplete', (req, res, next) => {
     method:'GET',
     },function(error,response,body){
         if(!error && response.statusCode==200){
-            res.json(body);
+            let autocompleteResult = JSON.parse(body);
+            res.json(autocompleteResult);
+        }
+        else{
+          res.json("failed");
         }
     });
 });
@@ -74,7 +78,10 @@ app.get('/api/products/tomorrow', (req, res, next) => {
               },function(error,response,body){
                   if(!error && response.statusCode==200){
                     let tomoResult = JSON.parse(body);
-                    let combLoc = geoResult["results"][0]["address_components"][2]["long_name"] + ", " + geoResult["results"][0]["address_components"][4]["long_name"];
+                    let formattedAddress = geoResult["results"][0]["formatted_address"];
+                    let formattedCity = formattedAddress.split(", ")[formattedAddress.split(", ").length - 3];
+                    let formattedState = formattedAddress.split(", ")[formattedAddress.split(", ").length - 2];
+                    let combLoc = formattedCity.replace(/[^a-zA-Z ]/g, "") + ", " + formattedState.replace(/[^a-zA-Z]/g, "");
                     let combResult = {
                       "title": combLoc,
                       "result": tomoResult,

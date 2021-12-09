@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    tools:context=".SplashScreen">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:src="@drawable/weather_partly_snowy_rainy" />
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/powered_by_tomorrow_white" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

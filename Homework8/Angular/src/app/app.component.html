@@ -5,15 +5,14 @@
   <div class="alert alert-danger" role="alert" *ngIf="progress.searchclicked && !progress.finished && progress.loadingerror">
     An error occured please try again later
   </div>
-  <div *ngIf="progress.finished && anim.control">
-    <div>
-      <app-cardloc *ngIf="loc.showcardloc"></app-cardloc>
-      <app-table *ngIf="table.showtable"  (tableclicked)="slidedetails()"></app-table>
-    </div>
+  <div *ngIf="progress.finished && anim.control" [@slide1]>
+    <app-cardloc *ngIf="loc.showcardloc"></app-cardloc>
     <app-dailytemp *ngIf="chart.showchart"></app-dailytemp>
     <app-meteogram *ngIf="meteo.showmeteo"></app-meteogram>
   </div>
-  <div *ngIf="progress.finished && !anim.control">
+  <div *ngIf="progress.finished && !anim.control" [@slide2]>
     <app-dailydetails *ngIf="dailydetails.showdetails" (detailsclicked)="slidetable()"></app-dailydetails>
   </div>
+  {{ animator1 }}
+  {{ animator2 }}
 </div>

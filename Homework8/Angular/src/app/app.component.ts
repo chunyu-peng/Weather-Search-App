@@ -5,10 +5,34 @@ import { ChartComponent } from './dailytemp/dailytemp.component';
 import { MeteogramComponent } from './meteogram/meteogram.component';
 import { DailyDetailsComponent } from './dailydetails/dailydetails.component';
 import { AnimationsComponent } from './animations/animations.component';
-import { trigger, transition, style, animate, state } from '@angular/animations';
+import { trigger, transition, query, style, animate, group } from '@angular/animations';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { FormComponent } from './form/form.component';
 import { TableComponent } from './table/table.component';
+
+const left = [
+  query(':enter, :leave', style({ position: 'absolute' }), { optional: true }),
+  group([
+    query(':enter', [style({ transform: 'translateX(-100%)' }), animate('5s ease-out', style({ transform: 'translateX(0%)' }))], {
+      optional: true,
+    }),
+    query(':leave', [style({ transform: 'translateX(0%)' }), animate('5s ease-out', style({ transform: 'translateX(100%)' }))], {
+      optional: true,
+    }),
+  ]),
+];
+
+const right = [
+  query(':enter, :leave', style({ position: 'absolute' }), { optional: true }),
+  group([
+    query(':enter', [style({ transform: 'translateX(100%)' }), animate('5s ease-out', style({ transform: 'translateX(0%)' }))], {
+      optional: true,
+    }),
+    query(':leave', [style({ transform: 'translateX(0%)' }), animate('5s ease-out', style({ transform: 'translateX(-100%)' }))], {
+      optional: true,
+    }),
+  ]),
+];
 
 @Component({
   selector: 'app-root',
@@ -16,24 +40,12 @@ import { TableComponent } from './table/table.component';
   styleUrls: ['./app.component.css'],
   animations: [
     trigger('slide1', [
-      state('in', style({
-        transform: 'translate3d(0, 0, 0)'
-      })),
-      state('out', style({
-        transform: 'translate3d(-100%, 0, 0)'
-      })),
-      transition('in => out', animate('400ms ease-in-out')),
-      transition('out => in', animate('400ms ease-in-out'))
+      transition(':enter', left),
+      transition(':leave', right),
     ]),
     trigger('slide2', [
-      state('in', style({
-        transform: 'translate3d(0, 0, 0)'
-      })),
-      state('out', style({
-        transform: 'translate3d(100%, 0, 0)'
-      })),
-      transition('in => out', animate('400ms ease-in-out')),
-      transition('out => in', animate('400ms ease-in-out'))
+      transition(':enter', right),
+      transition(':leave', left),
     ]),
   ],
 })
@@ -55,12 +67,12 @@ export class AppComponent {
   ) { }
 
   public slidedetails() {
-    this.animator1 = this.animator1 = 'out';
-    this.animator2 = this.animator2 = 'in';
+    this.animator1 = 'out';
+    this.animator2 = 'in';
   }
 
   public slidetable() {
-    this.animator1 = this.animator1 = 'in';
-    this.animator2 = this.animator2 = 'out';
+    this.animator1 = 'in';
+    this.animator2 = 'out';
   }
 }

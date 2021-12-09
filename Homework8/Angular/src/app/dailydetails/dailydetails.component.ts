@@ -9,7 +9,6 @@ import { AnimationsComponent } from '../animations/animations.component';
 
 export class DailyDetailsComponent implements OnInit{
   showdetails: boolean = false;
-  @Output() detailsclicked: EventEmitter<any> = new EventEmitter();
   date: any;
   status: any;
   maxtemp: any;
@@ -133,7 +132,6 @@ export class DailyDetailsComponent implements OnInit{
   }
 
   public showtable() {
-    this.detailsclicked.emit();
     this.anim.control = true;
   }
 }
