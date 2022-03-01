@@ -52,9 +52,9 @@ export class FormComponent implements OnInit {
   }
 
   private async _getData(value: string) {
-    let url = "http://localhost:3000/api/products/autocomplete?city=" + value;
+    let url = "http://angular-env.eba-8zitj2n7.us-west-1.elasticbeanstalk.com/api/products/autocomplete?city=" + value;
     let autoresponse = await this.http.get<any>(url).toPromise();
-    let autocomplete = JSON.parse(autoresponse);
+    let autocomplete = autoresponse;
     let predictionsLength = autocomplete.predictions.length;
     this.citiestatesMap.clear();
     for (let i = 0; i < predictionsLength; i++) {
@@ -179,7 +179,7 @@ export class FormComponent implements OnInit {
     let city = this.ipinforesponse.city;
     let region = this.ipinforesponse.region;
     let country = this.ipinforesponse.country;
-    let url = "http://localhost:3000/api/products/tomorrow?street=" + streetcheck + "&city=" + citycheck + "&state=" + statecheck + "&checkbox=" + boxcheck + "&loc=" + loc + "&autocity=" + city + "&region=" + region + "&country=" + country;
+    let url = "http://angular-env.eba-8zitj2n7.us-west-1.elasticbeanstalk.com/api/products/tomorrow?street=" + streetcheck + "&city=" + citycheck + "&state=" + statecheck + "&checkbox=" + boxcheck + "&loc=" + loc + "&autocity=" + city + "&region=" + region + "&country=" + country;
     url = url.replace(/\s/g, "+");
     this.http.get<any>(url).subscribe(value => {
       if (value == "failed") {

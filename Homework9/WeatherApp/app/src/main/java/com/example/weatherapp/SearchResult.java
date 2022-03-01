@@ -131,7 +131,7 @@ public class SearchResult extends AppCompatActivity {
     private void SearchResponse() {
         startProgressBar();
         RequestQueue queue = Volley.newRequestQueue(this);
-        String urlTomorrowSearch = "http://csci571hw8.us-west-1.elasticbeanstalk.com/api/products/tomorrow?checkbox=false&street=" + city +"&city=" + city + "&state=" + state;
+        String urlTomorrowSearch = "http://angular-env.eba-8zitj2n7.us-west-1.elasticbeanstalk.com/api/products/tomorrow?checkbox=false&street=" + city +"&city=" + city + "&state=" + state;
         JsonObjectRequest tomorrowSearchRequest = new JsonObjectRequest(Request.Method.GET, urlTomorrowSearch, null,
                 tomorrowSearchResponse -> {
                     String temperature = "";

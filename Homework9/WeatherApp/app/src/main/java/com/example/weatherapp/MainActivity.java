@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-                    String urlTomorrowAuto = "http://csci571hw8.us-west-1.elasticbeanstalk.com/api/products/tomorrow?checkbox=true&loc=" + loc + "&autocity=" + city + "&region=" + region + "&country=" + country;
+                    String urlTomorrowAuto = "http://angular-env.eba-8zitj2n7.us-west-1.elasticbeanstalk.com/api/products/tomorrow?checkbox=true&loc=" + loc + "&autocity=" + city + "&region=" + region + "&country=" + country;
                     JsonObjectRequest tomorrowAutoRequest = new JsonObjectRequest(Request.Method.GET, urlTomorrowAuto, null,
                             tomorrowAutoResponse -> {
                                 if (((Global) this.getApplication()).getNumTabs() == 0) {
@@ -209,7 +209,7 @@ public class MainActivity extends AppCompatActivity {
                 autoComplete = new HashMap<>();
                 listView = (ListView) findViewById(R.id.listView);
                 RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
-                String urlAutoComplete = "http://csci571hw8.us-west-1.elasticbeanstalk.com/api/products/autocomplete?city=" + newText;
+                String urlAutoComplete = "http://angular-env.eba-8zitj2n7.us-west-1.elasticbeanstalk.com/api/products/autocomplete?city=" + newText;
                 JsonObjectRequest autoCompleteRequest = new JsonObjectRequest(Request.Method.GET, urlAutoComplete, null,
                         autoCompleteResponse -> {
                             int length = 0;
